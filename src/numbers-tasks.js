@@ -125,7 +125,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-const getLastDigit = (value) => Math.floor(value % 10);
+function getLastDigit(value) {
+  return Math.floor(value % 10);
+}
 
 /**
  * Returns a number by given string representation.
@@ -138,7 +140,9 @@ const getLastDigit = (value) => Math.floor(value % 10);
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-const parseNumberFromString = (value) => String(value);
+function parseNumberFromString(value) {
+  return String(value);
+}
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -153,8 +157,9 @@ const parseNumberFromString = (value) => String(value);
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-const getParallelepipedDiagonal = (a, b, c) =>
-  Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+function getParallelepipedDiagonal(a, b, c) {
+  return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
+}
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -173,7 +178,9 @@ const getParallelepipedDiagonal = (a, b, c) =>
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-const roundToPowerOfTen = (num, pow) => Math.round(num / 10 ** pow) * 10 ** pow;
+function roundToPowerOfTen(num, pow) {
+  return Math.round(num / 10 ** pow) * 10 ** pow;
+}
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -192,7 +199,7 @@ const roundToPowerOfTen = (num, pow) => Math.round(num / 10 ** pow) * 10 ** pow;
  *   16 => false
  *   17 => true
  */
-const isPrime = (n) => {
+function isPrime(n) {
   if (n === 2 || n === 3) {
     return true;
   }
@@ -205,7 +212,7 @@ const isPrime = (n) => {
     }
   }
   return true;
-};
+}
 
 /**
  * Tries to convert value to number and returns it if conversion was successful;
@@ -222,7 +229,9 @@ const isPrime = (n) => {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-const toNumber = (value, def) => Number(value) || def;
+function toNumber(value, def) {
+  return Number(value) || def;
+}
 
 /**
  * Returns the cube of the given number.
@@ -235,7 +244,9 @@ const toNumber = (value, def) => Number(value) || def;
  *   -2 => -8
  *   0  => 0
  */
-const getCube = (num) => num ** 3;
+function getCube(num) {
+  return num ** 3;
+}
 
 /**
  * Returns the Fibonacci number located at the index position.
@@ -250,15 +261,13 @@ const getCube = (num) => num ** 3;
  *   3  => 2
  *   10 => 55
  */
-const getFibonacciNumber = (index) => {
+function getFibonacciNumber(index) {
   const fib = [0, 1];
-
   for (let i = 2; i <= index; i += 1) {
     fib[i] = fib[i - 1] + fib[i - 2];
   }
-
   return fib[index];
-};
+}
 
 /**
  * Returns the sum of all numbers from 1 to n.
@@ -271,7 +280,9 @@ const getFibonacciNumber = (index) => {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-const getSumToN = (n) => (n * (n + 1)) / 2;
+function getSumToN(n) {
+  return (n * (n + 1)) / 2;
+}
 
 /**
  * Returns the sum of the digits of a given number.
@@ -284,13 +295,14 @@ const getSumToN = (n) => (n * (n + 1)) / 2;
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-const getSumOfDigits = (num) =>
-  String(num)
+function getSumOfDigits(num) {
+  return String(num)
     .split('')
     .reduce(
       (accumulator, currentValue) => accumulator + parseInt(currentValue, 10),
       0
     );
+}
 
 /**
  * Returns true if the given number is a power of two, false otherwise.
@@ -303,7 +315,9 @@ const getSumOfDigits = (num) =>
  *   16  => true
  *   15  => false
  */
-const isPowerOfTwo = (num) => Math.log2(num) % 1 === 0;
+function isPowerOfTwo(num) {
+  return Math.log2(num) % 1 === 0;
+}
 
 /**
  * Returns the sine of a number.
@@ -315,7 +329,9 @@ const isPowerOfTwo = (num) => Math.log2(num) % 1 === 0;
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-const getSine = (num) => Math.sin(num);
+function getSine(num) {
+  return Math.sin(num);
+}
 
 /**
  * Returns a string representation of a number in a specified base (radix).
@@ -328,7 +344,9 @@ const getSine = (num) => Math.sin(num);
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-const numberToStringInBase = (number, base) => number.toString(base);
+function numberToStringInBase(number, base) {
+  return number.toString(base);
+}
 
 /**
  * Returns a string representation of a number in exponential notation.
@@ -340,8 +358,10 @@ const numberToStringInBase = (number, base) => number.toString(base);
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-const toExponential = (number, fractionDigits) =>
-  Number.parseFloat(number).toExponential(fractionDigits);
+function toExponential(number, fractionDigits) {
+  return Number.parseFloat(number).toExponential(fractionDigits);
+}
+
 /**
  * Returns a string representation of a number in fixed-point notation.
  *
@@ -353,7 +373,9 @@ const toExponential = (number, fractionDigits) =>
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-const toFixed = (number, fractionDigits) => number.toFixed(fractionDigits);
+function toFixed(number, fractionDigits) {
+  return number.toFixed(fractionDigits);
+}
 
 /**
  * Returns a string representation of a number in normal (fixed-point or exponential)
@@ -367,7 +389,10 @@ const toFixed = (number, fractionDigits) => number.toFixed(fractionDigits);
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-const toPrecision = (number, precision) => number.toPrecision(precision);
+function toPrecision(number, precision) {
+  return number.toPrecision(precision);
+}
+
 /**
  * Returns the primitive value of a Number object.
  *
@@ -378,7 +403,9 @@ const toPrecision = (number, precision) => number.toPrecision(precision);
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-const getNumberValue = (number) => number.valueOf();
+function getNumberValue(number) {
+  return number.valueOf();
+}
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
@@ -395,7 +422,9 @@ const getNumberValue = (number) => number.valueOf();
  * 5        => true
  * '5'      => false
  */
-const isNumber = (number) => Number.isInteger(number);
+function isNumber(number) {
+  return Number.isFinite(number);
+}
 
 /**
  * Returns a boolean value indicating whether a number is an integer or not.
@@ -408,7 +437,9 @@ const isNumber = (number) => Number.isInteger(number);
  * 5.1  => false
  * '5'  => false
  */
-const isInteger = (number) => Number.isInteger(number);
+function isInteger(number) {
+  return Number.isInteger(number);
+}
 
 /**
  * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
@@ -420,7 +451,9 @@ const isInteger = (number) => Number.isInteger(number);
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-const getFloatOnString = (str) => parseFloat(str, 10);
+function getFloatOnString(str) {
+  return Number.parseFloat(str);
+}
 
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
@@ -436,7 +469,9 @@ const getFloatOnString = (str) => parseFloat(str, 10);
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-const getIntegerOnString = (str, base) => parseInt(str, base);
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
+}
 
 /**
  * Returns whether a number is a safe integer.
@@ -449,7 +484,9 @@ const getIntegerOnString = (str, base) => parseInt(str, base);
  * 3.5      => false
  * 2 ** 53  => false
  */
-const isSafeInteger = (number) => Number.isSafeInteger(number);
+function isSafeInteger(number) {
+  return Number.isSafeInteger(number);
+}
 
 /**
  * Returns the smallest integer less than or equal to a given number.
@@ -461,7 +498,9 @@ const isSafeInteger = (number) => Number.isSafeInteger(number);
  * 5.9  => 5
  * -5.1 => -6
  */
-const roundToSmallestInteger = (number) => Math.floor(number);
+function roundToSmallestInteger(number) {
+  return Math.floor(number);
+}
 
 /**
  * Returns the largest integer greater than or equal to a given number.
@@ -503,7 +542,9 @@ function roundToNearestInteger(number) {
  * 5.4  => 5
  * -5.5 => -5
  */
-const getIntegerPartNumber = (number) => Math.trunc(number);
+function getIntegerPartNumber(number) {
+  return Math.trunc(number);
+}
 
 /**
  * Returns the sum of numbers.
@@ -517,7 +558,9 @@ const getIntegerPartNumber = (number) => Math.trunc(number);
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-const getSumOfNumbers = (x1, x2, x3) => (x1 + x2 + x3).toFixed(1);
+function getSumOfNumbers(x1, x2, x3) {
+  return (x1 + x2 + x3).toFixed(1);
+}
 
 /**
  * Returns the largest number.
@@ -531,8 +574,9 @@ const getSumOfNumbers = (x1, x2, x3) => (x1 + x2 + x3).toFixed(1);
  * -5, -6 => -5
  * 0, 5   => 5
  */
-const getMaxNumber = (firstNumber, secondNumber) =>
-  Math.max(firstNumber, secondNumber);
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
+}
 
 /**
  * Returns a random integer in the range from min to max.
@@ -546,8 +590,9 @@ const getMaxNumber = (firstNumber, secondNumber) =>
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-const getRandomInteger = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 /**
  * Returns the length of the hypotenuse of a right triangle.
